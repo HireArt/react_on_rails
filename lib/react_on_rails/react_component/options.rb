@@ -58,6 +58,10 @@ module ReactOnRails
         return nil if ReactOnRails.configuration.skip_display_none
         HIDDEN
       end
+      
+      def tag
+        options.fetch(:tag) { :div }
+      end
 
       private
 

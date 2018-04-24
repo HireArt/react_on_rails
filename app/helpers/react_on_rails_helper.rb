@@ -105,7 +105,7 @@ module ReactOnRailsHelper
     # The reason is that React is smart about not doing extra work if the server rendering did its job.
 
     component_specification_tag =
-      content_tag(:div,
+      content_tag(options.tag,
                   "",
                   class: "js-react-on-rails-component",
                   style: options.style,
@@ -123,7 +123,7 @@ module ReactOnRailsHelper
     content_tag_options = options.html_options
     content_tag_options[:id] = options.dom_id
 
-    rendered_output = content_tag(:div,
+    rendered_output = content_tag(options.tag,
                                   server_rendered_html.html_safe,
                                   content_tag_options)
 
